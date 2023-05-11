@@ -8,8 +8,9 @@
 - [x] Create bot message handler functions;
 - [x] Add these functions to the methods of the telebot.Bot object;
 - [x] Process messages according to their type and content.
-- [x] Integrate Makefile and Dockerfile for automation 
-- [ ] 
+- [x] Integrate Makefile and Dockerfile for automation
+
+
 ### :tada: Results :tada:
 
 t.me/ibayro_bot - this is a trivial Telegram bot with minimal functional.
