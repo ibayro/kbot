@@ -6,9 +6,9 @@ replicaCount: 1
 
 image:
   repository: "ibayro"
-  # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.0.4-79fbb34"
-  arc: amd64
+  tag: "1.0.4-1cfc0f6"
+  arch: amd64
+  TELE_TOKEN: "TELE_TOKEN"
 secret:
   name: "kbot"
   env: "TELE_TOKEN"
