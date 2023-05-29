@@ -22,7 +22,7 @@ jobs:
           uses: docker/build-push-action@v4
           with:
             push: true
-            tags: ibayro/kbot:"VERSION=$(git describe --tags --abbrev=0)-$(git rev-parse --short HEAD)"
+            tags: ibayro/kbot:"VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)"
           env:
             APP: "kbot"
             REGISTRY: ${{ secrets.DOCKERHUB_USERNAME }}
