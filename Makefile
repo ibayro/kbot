@@ -9,6 +9,7 @@ MACOS=darwin
 AMD=amd64
 ARM=arm64
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
+PWD=.
 
 ### kbot binaries creation for different operating systems and architectures. ###
 windows: format get $(WINDOWS)	## Build kbot for Windows
@@ -42,13 +43,13 @@ all: format get test build 		          ## Start format -> compile -> test -> bui
 
 #Linux is set as a Default 
 image:
-	docker build --tag ${REGISTRY}/${APP}:${VERSION}-${LINUX}-${AMD} --build-arg os=linux .
+	docker build --tag ${REGISTRY}/${APP}:${VERSION}-${LINUX}-${AMD} --build-arg os=linux ${PWD}
 image_windows:
-	docker build -t ${REGISTRY}/${APP}:${VERSION}-${WINDOWS}-${AMD} --build-arg os=windows .
+	docker build -t ${REGISTRY}/${APP}:${VERSION}-${WINDOWS}-${AMD} --build-arg os=windows ${PWD}
 image_mac:
-	docker build -t ${REGISTRY}/${APP}:${VERSION}-${MACOS}-${ARM} --build-arg os=darwin .
+	docker build -t ${REGISTRY}/${APP}:${VERSION}-${MACOS}-${ARM} --build-arg os=darwin ${PWD}
 image_mac_amd64:
-	docker build -t ${REGISTRY}/${APP}:${VERSION}-${MACOS}-${AMD} --build-arg os=darwin .
+	docker build -t ${REGISTRY}/${APP}:${VERSION}-${MACOS}-${AMD} --build-arg os=darwin ${PWD}
 
 ### Docker container push to remote repo ###
 
