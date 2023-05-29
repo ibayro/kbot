@@ -42,7 +42,7 @@ all: format get test build 		          ## Start format -> compile -> test -> bui
 
 #Linux is set as a Default 
 image:
-	docker build -t ${REGISTRY}/${APP}:${VERSION}-${LINUX}-${AMD} --build-arg os=linux .
+	docker build --tag ${REGISTRY}/${APP}:${VERSION}-${LINUX}-${AMD} --build-arg os=linux .
 image_windows:
 	docker build -t ${REGISTRY}/${APP}:${VERSION}-${WINDOWS}-${AMD} --build-arg os=windows .
 image_mac:
