@@ -22,7 +22,7 @@ jobs:
           uses: docker/build-push-action@v4
           with:
             push: true
-            tags: ibayro/kbot:$VERSION
+            tags: ibayro/kbot:${VERSION}
           env:
             APP: "kbot"
             REGISTRY: ${{ secrets.DOCKERHUB_USERNAME }}
