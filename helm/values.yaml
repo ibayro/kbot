@@ -5,7 +5,7 @@
 replicaCount: 1
 image:
   repository: "ibayro"
-  tag: "1.0.4-6a731e2"
+  tag: "1.0.4-3bcf41a"
   arch: amd64
   TELE_TOKEN: "TELE_TOKEN"
 secret:
