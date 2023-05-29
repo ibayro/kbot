@@ -4,13 +4,10 @@
 
 replicaCount: 1
 image:
-  repository: "ibayro"
-  tag: "1.0.4-29e0c2e"
+  repository: ibayro
+  tag: "1.0.4-3bcf41a"
   arch: amd64
-  TELE_TOKEN: "TELE_TOKEN"
 secret:
-  name: "kbot"
-  env: "TELE_TOKEN"
-  key: "token"
-securityContext:
-  privileged: true
+  name: kbot
+  tokenKey: token
+  tokenName: TELE_TOKEN
