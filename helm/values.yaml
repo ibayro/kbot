@@ -5,7 +5,7 @@
 replicaCount: 1
 image:
   repository: "ibayro"
-  tag: "1.0.4-bad66ac"
+  tag: "1.0.4-86731f2"
   arch: amd64
 secret:
   name: "kbot"
