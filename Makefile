@@ -1,7 +1,7 @@
 APP=$(shell basename $(shell git remote get-url origin))
 REGISTRY=ibayro
 BUILD.exe=go build -v -o kbot.exe -ldflags "-X="github.com/ibayro/kbot/cmd.appVersion=
-BUILD.deb=go build -v -o kbot.deb -ldflags "-X="github.com/ibayro/kbot/cmd.appVersion=
+BUILD.deb=go build -v -o kbot -ldflags "-X="github.com/ibayro/kbot/cmd.appVersion=
 BUILD.dmg=go build -v -o kbot.dmg -ldflags "-X="github.com/ibayro/kbot/cmd.appVersion=
 WINDOWS=windows
 LINUX=linux
