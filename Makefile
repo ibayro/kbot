@@ -1,7 +1,7 @@
 APP=$(shell basename $(shell git remote get-url origin))
 REGISTRY=ibayro
 BUILD.exe=go build -v -o kbot.exe -ldflags "-X="github.com/ibayro/kbot/cmd.appVersion=
-BUILD.deb=go build -v -o kbot.deb -ldflags "-X="github.com/ibayro/kbot/cmd.appVersion=
+BUILD.deb=go build -v -o kbot -ldflags "-X="github.com/ibayro/kbot/cmd.appVersion=
 BUILD.dmg=go build -v -o kbot.dmg -ldflags "-X="github.com/ibayro/kbot/cmd.appVersion=
 WINDOWS=windows
 LINUX=linux
@@ -9,6 +9,7 @@ MACOS=darwin
 AMD=amd64
 ARM=arm64
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
+PWD=.
 
 ### kbot binaries creation for different operating systems and architectures. ###
 windows: format get $(WINDOWS)	## Build kbot for Windows
@@ -42,19 +43,19 @@ all: format get test build 		          ## Start format -> compile -> test -> bui
 
 #Linux is set as a Default 
 image:
-	docker build -t ${REGISTRY}/${APP}:${VERSION}-${LINUX}-${AMD} --build-arg os=linux .
+	docker build -t ${REGISTRY}/${APP}:${VERSION}-${AMD} --build-arg os=linux ${PWD}
 image_windows:
-	docker build -t ${REGISTRY}/${APP}:${VERSION}-${WINDOWS}-${AMD} --build-arg os=windows .
+	docker build -t ${REGISTRY}/${APP}:${VERSION}-${WINDOWS}-${AMD} --build-arg os=windows ${PWD}
 image_mac:
-	docker build -t ${REGISTRY}/${APP}:${VERSION}-${MACOS}-${ARM} --build-arg os=darwin .
+	docker build -t ${REGISTRY}/${APP}:${VERSION}-${MACOS}-${ARM} --build-arg os=darwin ${PWD}
 image_mac_amd64:
-	docker build -t ${REGISTRY}/${APP}:${VERSION}-${MACOS}-${AMD} --build-arg os=darwin .
+	docker build -t ${REGISTRY}/${APP}:${VERSION}-${MACOS}-${AMD} --build-arg os=darwin ${PWD}
 
 ### Docker container push to remote repo ###
 
 #Linux is set as a Default 
 push:
-	docker push ${REGISTRY}/${APP}:${VERSION}-${LINUX}-${AMD}
+	docker push ${REGISTRY}/${APP}:${VERSION}-${AMD}
 push_windows:
 	docker push ${REGISTRY}/${APP}:${VERSION}-${WINDOWS}-${AMD}
 push_mac:
