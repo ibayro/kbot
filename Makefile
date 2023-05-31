@@ -1,5 +1,5 @@
 APP=$(shell basename $(shell git remote get-url origin))
-REGISTRY=ghcr.io/ibayro/
+REGISTRY=ghcr.io/ibayro
 BUILD.exe=go build -v -o kbot.exe -ldflags "-X="github.com/ibayro/kbot/cmd.appVersion=
 BUILD.deb=go build -v -o kbot -ldflags "-X="github.com/ibayro/kbot/cmd.appVersion=
 BUILD.dmg=go build -v -o kbot.dmg -ldflags "-X="github.com/ibayro/kbot/cmd.appVersion=
@@ -12,7 +12,7 @@ VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HE
 PWD=.
 
 ### kbot binaries creation for different operating systems and architectures. ###
-windows: format get $(WINDOWS)	## Build kbot for Windows
+windows: format get $(WINDOWS)	  ## Build kbot for Windows
 linux:   format get $(LINUX) 	  ## Build kbot for Linux
 darwin:  format get $(MACOS) 	  ## Build kbot for macOS
 
