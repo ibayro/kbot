@@ -1,5 +1,5 @@
 APP=$(shell basename $(shell git remote get-url origin))
-REGISTRY=ibayro
+REGISTRY=ghcr.io/ibayro/kbot
 BUILD.exe=go build -v -o kbot.exe -ldflags "-X="github.com/ibayro/kbot/cmd.appVersion=
 BUILD.deb=go build -v -o kbot -ldflags "-X="github.com/ibayro/kbot/cmd.appVersion=
 BUILD.dmg=go build -v -o kbot.dmg -ldflags "-X="github.com/ibayro/kbot/cmd.appVersion=
@@ -43,7 +43,7 @@ all: format get test build 		          ## Start format -> compile -> test -> bui
 
 #Linux is set as a Default 
 image:
-	docker build -t ${REGISTRY}/${APP}:${VERSION}-${AMD} --build-arg os=linux ${PWD}
+	docker build -t ${REGISTRY}/${APP}:${VERSION}-${LINUX}-${AMD} --build-arg os=linux ${PWD}
 image_windows:
 	docker build -t ${REGISTRY}/${APP}:${VERSION}-${WINDOWS}-${AMD} --build-arg os=windows ${PWD}
 image_mac:
@@ -55,7 +55,7 @@ image_mac_amd64:
 
 #Linux is set as a Default 
 push:
-	docker push ${REGISTRY}/${APP}:${VERSION}-${AMD}
+	docker push ${REGISTRY}/${APP}:${VERSION}-${LINUX}-${AMD}
 push_windows:
 	docker push ${REGISTRY}/${APP}:${VERSION}-${WINDOWS}-${AMD}
 push_mac:
