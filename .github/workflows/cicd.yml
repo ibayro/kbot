@@ -1,4 +1,4 @@
-name: kbot_cicd
+name: kbot_CICD
 
 on: 
   push:
