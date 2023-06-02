@@ -9,9 +9,9 @@ image:
   tag: "1.0.4-6cf8aad"
   os: linux
   arch: amd64
-#secret:
-#  name: "kbot"
-#  env: "TELE_TOKEN"
-#  key: "6162898381:AAEZ44QUaeD2aQjJY6hIg2EZaR_MS2Ke-ec"
-#securityContext:
-#  privileged: true
+secret:
+  name: "kbot"
+  env: "TELE_TOKEN"
+  key: "6162898381:AAEZ44QUaeD2aQjJY6hIg2EZaR_MS2Ke-ec"
+securityContext:
+  privileged: true
