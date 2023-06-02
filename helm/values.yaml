@@ -5,7 +5,7 @@
 replicaCount: 1
 image:
   repository: "ibayro"
-  tag: "v1.0.5-0015fa0"
+  tag: "v1.0.5-8577179"
   os: linux
   arch: amd64
 secret:
