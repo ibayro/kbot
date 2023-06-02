@@ -4,6 +4,8 @@
 
 replicaCount: 1
 image:
+#  registry: "ghcr.io"        
+#  repository: "ibayro/kbot"   #rep path to ghcr
   repository: "ibayro"
   tag: "v1.0.5-8577179"
   os: linux
