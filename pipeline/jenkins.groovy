@@ -11,7 +11,7 @@ pipeline {
         stage('Example') {
             steps {
                 echo "Target OS ${params.OS}"
-                echo "Target arch: ${params.ARCH}"
+                echo "Target arch ${params.ARCH}"
             }
         }
         stage("clone") {
