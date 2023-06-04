@@ -7,7 +7,7 @@ image:
   #  registry: "ghcr.io"        
   #  repository: "ibayro/kbot"   #rep path to ghcr
   repository: "ibayro"
-  tag: "v1.0.5-3155f8d"
+  tag: "v1.0.5-838fd89"
   os: linux
   arch: amd64
 secret:
