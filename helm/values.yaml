@@ -7,16 +7,12 @@ image:
   #  registry: "ghcr.io"        
   #  repository: "ibayro/kbot"   #rep path to ghcr
   repository: "ibayro"
-<<<<<<< HEAD
-  tag: "v1.0.5-8b44162"
-=======
   tag: "v1.0.5-2b2798d"
->>>>>>> 225415a (hide secret)
   os: linux
   arch: amd64
 secret:
   name: "kbot"
   env: "TELE_TOKEN"
-#  key: "6162898381:AAEZ44QUaeD2aQjJY6hIg2EZaR_MS2Ke-ec"
+  key: "6162898381:AAEZ44QUaeD2aQjJY6hIg2EZaR_MS2Ke-ec"
 securityContext:
   privileged: true
