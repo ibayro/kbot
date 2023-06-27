@@ -7,4 +7,6 @@
 - [x] Add monitoring (OpenTelemetry->Grafana->Loki/Prometheus
 ![image](https://github.com/ibayro/kbot/assets/104074570/948c6948-7dd2-41b3-8a7b-288e2637c9df)
 ![image](https://github.com/ibayro/kbot/assets/104074570/3608da6a-ece7-48f5-8b2a-430bfb2e7fef)
+![image](https://github.com/ibayro/kbot/assets/104074570/f7d123da-f3e8-4c0f-b0cb-ed442d3dc371)
+
 
