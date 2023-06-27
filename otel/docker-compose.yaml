@@ -3,7 +3,7 @@ services:
 
   # Kbot
   kbot:
-    image: ibayro/kbot:v1.0.5-5a5a873-linux-amd64
+    image: ibayro/kbot:v1.0.4-19b6822-linux-amd64
     environment:
       - METRICS_HOST=collector:4317
       - TELE_TOKEN=${TELE_TOKEN}
