@@ -6,7 +6,6 @@ package cmd
 import (
 	"context"
 	"fmt"
-	"log"
 	"os"
 	"time"
 
@@ -93,7 +92,7 @@ to quickly create a Cobra application.`,
 		})
 
 		if err != nil {
-			logger.Fatalf("Please check TELE_TOKEN env variable. %s", err)
+			logger.Fatal().Str("Error", err.Error()).Msg("Please check TELE_TOKEN")
 			return
 		} else {
 			logger.Info().Str("Version", appVersion).Msg("kbot started")
@@ -101,9 +100,10 @@ to quickly create a Cobra application.`,
 		}
 
 		kbot.Handle(telebot.OnText, func(m telebot.Context) error {
+			logger.Info().Str("Payload", m.Text()).Msg(m.Message().Payload)
 
-			log.Print(m.Message().Payload, m.Text())
 			payload := m.Message().Payload
+			metrica(context.Background(), payload)
 
 			switch payload {
 			case "hello":
