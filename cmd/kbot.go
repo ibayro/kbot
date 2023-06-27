@@ -93,10 +93,10 @@ to quickly create a Cobra application.`,
 		})
 
 		if err != nil {
-			log.Fatalf("Please check TELE_TOKEN env variable. %s", err)
+			logger.Fatalf("Please check TELE_TOKEN env variable. %s", err)
 			return
 		} else {
-			log.Info().Str("Version", appVersion).Msg("kbot started")
+			logger.Info().Str("Version", appVersion).Msg("kbot started")
 
 		}
 
